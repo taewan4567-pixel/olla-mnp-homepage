@@ -199,6 +199,18 @@ p { margin: 0 0 1em; }
 .consent-detail a { color: var(--teal-dark); text-decoration: underline; }
 .form-note { margin: 0; font-size: .9rem; color: var(--teal-dark); min-height: 1.2em; }
 
+/* Floating messenger buttons */
+.chat-float { position: fixed; right: 20px; bottom: 20px; z-index: 90; display: flex; flex-direction: column; gap: .6rem; align-items: flex-end; }
+.chat-btn {
+  display: flex; align-items: center; gap: .5rem; font-weight: 700; font-size: .95rem;
+  padding: .7rem 1.1rem .7rem .9rem; border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.22); transition: transform .15s, box-shadow .15s;
+}
+.chat-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.28); }
+.chat-btn.whatsapp { background: #25D366; color: #fff; }
+.chat-btn.kakao { background: #FEE500; color: #191919; }
+@media (max-width: 480px) { .chat-btn span { display: none; } .chat-btn { padding: .8rem; } }
+
 /* Footer */
 .site-footer { background: #060a3a; color: rgba(255,255,255,.75); padding: 3rem 0 1.5rem; font-size: .88rem; }
 .footer-inner { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
