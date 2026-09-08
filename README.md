@@ -15,6 +15,9 @@ assets/         # 로고, 사진 등 이미지 (추가 예정)
 
 ## 배포
 
+- 공개 주소: https://ollamnpsolution.com (GitHub Pages, `main` 브랜치 루트에서 자동 배포)
+- 도메인: 가비아 등록, DNS A 레코드 4개 + www CNAME → taewan4567-pixel.github.io
+
 - **GitHub Pages**: 저장소 Settings → Pages → Branch `main`, folder `/ (root)` 선택
 - **Netlify / Vercel**: 저장소 연결 후 빌드 명령 없이 배포 디렉터리를 루트로 지정
 

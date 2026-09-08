@@ -6,7 +6,7 @@
 - [x] 연락처 반영 완료 (대표전화 1844-0625, 휴대폰, 팩스)
 - [x] 영문 상호 Olla M&P Solution, 이메일 ollamnpsolution@gmail.com 반영 완료
 - [ ] **남은 기본 정보**: 메신저 계정 (카카오톡 채널 / WhatsApp / WeChat / LINE)
-- [ ] **도메인 확보** (예: olla-mnp.com / ollamnp.co.kr)
+- [x] **도메인 확보**: ollamnpsolution.com (가비아, 사업자 명의) — GitHub Pages 연결 완료
 
 ## 2단계. 화면 퀄리티를 좌우하는 자산
 - [ ] **로고 파일** (SVG 또는 고해상도 PNG, 가로형·심볼형)
@@ -55,7 +55,8 @@
 - [ ] 타깃 국가 언어 (중국어 / 러시아어 / 일본어 / 베트남어 / 몽골어 중 결정)
 
 ## 8단계. 배포·운영
-- [ ] 배포 (GitHub Pages / Netlify / Vercel) + 도메인 연결 + HTTPS
+- [x] GitHub Pages 배포 + 도메인 연결 완료
+- [ ] Enforce HTTPS 체크 (인증서 발급 후 Pages 설정에서 활성화)
 - [ ] SEO: 메타태그, OG 이미지, sitemap, Google Search Console, 네이버 서치어드바이저
 - [ ] Google Analytics 설치
 - [ ] 후기·사례 섹션, FAQ, 블로그/공지 (운영 단계)
