@@ -29,6 +29,6 @@ form.addEventListener('submit', (e) => {
     '',
     d.get('message'),
   ].join('\n');
-  window.location.href = `mailto:contact@olla-mnp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  note.textContent = '메일 앱이 열립니다. 열리지 않으면 contact@olla-mnp.com 으로 직접 보내주세요.';
+  window.location.href = `mailto:ollamnpsolution@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  note.textContent = '메일 앱이 열립니다. 열리지 않으면 ollamnpsolution@gmail.com 으로 직접 보내주세요.';
 });
