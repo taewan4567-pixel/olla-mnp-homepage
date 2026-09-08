@@ -5,6 +5,7 @@
 - [x] 상호(올라M&P솔루션), 대표자, 사업자등록번호, 유치사업자 등록번호, 주소 반영 완료
 - [x] 연락처 반영 완료 (대표전화 1844-0625, 휴대폰, 팩스)
 - [x] 영문 상호 Olla M&P Solution, 이메일 ollamnpsolution@gmail.com 반영 완료
+- [x] 업무시간 평일 09:00–18:00 KST 확정, 응급은 119/1339 안내로 분리
 - [x] 카카오톡 채널 올라솔루션 (pf.kakao.com/_ezKGX) 링크 + 플로팅 상담 버튼 적용
 - [x] **도메인 확보**: ollamnpsolution.com (가비아, 사업자 명의) — GitHub Pages 연결 완료
 
@@ -43,7 +44,8 @@
 
 ## 5단계. 기능
 - [ ] **문의 폼 백엔드** (Formspree / Google Apps Script / 자체 API) — 현재 mailto 임시
-- [x] WhatsApp 버튼 (wa.me/821089214567, 휴대폰 번호 기준) 적용 — 해당 번호에 WhatsApp 설치 확인 필요
+- [x] WhatsApp 버튼 적용 (wa.me/821089214567)
+- [ ] WhatsApp Business 설치 후 부재중 자동응답 설정 (업무시간 외 안내 + 119 응급 안내)
 - [ ] WeChat(중국) / LINE(일본·태국·대만) 계정 확보 시 추가
 - [ ] 협력 병원 페이지 (개별 소개)
 
