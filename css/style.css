@@ -192,6 +192,11 @@ p { margin: 0 0 1em; }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 2px solid var(--teal); border-color: var(--teal); }
 .consent { display: flex !important; align-items: center; gap: .5rem; font-weight: 400 !important; }
 .consent input { width: auto; }
+.consent-detail { font-size: .85rem; background: var(--bg-alt); border: 1px solid var(--line); border-radius: 8px; padding: .6rem .9rem; }
+.consent-detail summary { cursor: pointer; font-weight: 500; color: var(--navy); }
+.consent-detail ul { margin: .5rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+.consent-detail li { margin-bottom: .2rem; }
+.consent-detail a { color: var(--teal-dark); text-decoration: underline; }
 .form-note { margin: 0; font-size: .9rem; color: var(--teal-dark); min-height: 1.2em; }
 
 /* Footer */
