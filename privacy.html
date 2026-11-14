@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>개인정보처리방침 | 올라 M&amp;P 솔루션</title>
+  <title>개인정보처리방침 | 올라 가이드</title>
   <meta name="robots" content="noindex, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -32,26 +31,26 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="top">
   <div class="container header-inner">
-    <a href="index.html" class="logo">
-      <img class="logo-img" src="assets/logo-mark.svg" alt="" width="40" height="40">
-      <span class="logo-text">올라 <strong class="logo-mp">M&amp;P</strong> 솔루션</span>
-    </a>
-    <nav class="nav" id="nav">
-      <a href="index.html#about">회사소개</a>
-      <a href="index.html#services">서비스</a>
-      <a href="index.html#official">공식정보</a>
-      <a href="index.html#contact" class="btn btn-sm">상담문의</a>
+    <a class="logo" href="./"><img class="logo-img" src="assets/logo-mark.svg" alt="" width="32" height="32"><span class="logo-text" data-brand>올라 가이드</span></a>
+    <nav class="nav" id="nav" aria-label="메뉴">
+      <a href="./">홈</a>
+      <a href="medical.html">치료 안내</a>
+      <a href="travel.html">관광지 안내</a>
+      <a class="nav-cta" href="medical.html#contact">상담 문의</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <nav class="lang-links" aria-label="언어 선택"><a href="./" hreflang="ko" lang="ko" aria-current="true">한국어</a><a href="en/" hreflang="en" lang="en">EN</a><a href="zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a href="th/" hreflang="th" lang="th">ไทย</a><a href="vi/" hreflang="vi" lang="vi">VI</a></nav>
+    <details class="lang-menu">
+      <summary aria-label="언어 선택"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>언어 / Language</span></summary>
+      <nav class="lang-pop" aria-label="언어 선택"><a href="./" hreflang="ko" lang="ko" aria-current="true">한국어</a><a href="en/" hreflang="en" lang="en">English</a><a href="zh/" hreflang="zh-Hans" lang="zh-Hans">中文(简体)</a><a href="th/" hreflang="th" lang="th">ภาษาไทย</a><a href="vi/" hreflang="vi" lang="vi">Tiếng Việt</a></nav>
+    </details>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="메뉴 열기" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main class="legal">
-  <a class="back" href="index.html">← 홈으로</a>
+  <a class="back" href="./">홈으로</a>
   <h1>개인정보처리방침</h1>
   <p class="meta">시행일: 2026년 9월 8일 · 버전 1.0</p>
 
@@ -245,36 +244,28 @@
   <h2 id="s15">15. 개인정보처리방침의 변경</h2>
   <p>이 개인정보처리방침은 2026년 9월 8일부터 적용됩니다. 법령이나 서비스 변경에 따라 내용이 추가·삭제·수정되는 경우 시행 7일 전부터 홈페이지 공지사항을 통해 알립니다.</p>
   <ul>
-    <li>2026. 09. 08 — 최초 제정 (v1.0)</li>
+    <li>2026. 09. 08: 최초 제정 (v1.0)</li>
   </ul>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
     <div>
-      <p class="footer-brand">올라 M&amp;P 솔루션 (Olla M&amp;P Solution)</p>
-      <p class="footer-legal">
-        상호: 올라M&amp;P솔루션 | 대표: 임태완 | 사업자등록번호: 843-32-01668<br>
-        외국인환자 유치사업자 등록번호: 제 A-2026-03-02-06726 호 (대구광역시)<br>
-        주소: 대구광역시 수성구 명덕로 414, 13층 1301호 (수성동2가, 미르메디타워) | 대표전화: 1844-0625 | 이메일: ollamnpsolution@gmail.com
-      </p>
+      <p class="footer-brand"><span data-brand>올라 가이드</span> · 올라M&amp;P솔루션 (Olla M&amp;P Solution)</p>
+      <p class="footer-legal">상호: 올라M&amp;P솔루션 | 대표: 임태완 | 사업자등록번호: 843-32-01668<br>
+        외국인환자 유치사업자 등록번호: 제 A-2026-03-02-06726 호 (대구광역시, 유효기간 2026.03.04~2029.03.03)<br>
+        주소: 대구광역시 수성구 명덕로 414, 미르메디타워 13층 1301호<br>
+        대표전화: 1844-0625 (평일 09:00~18:00) | 이메일: ollamnpsolution@gmail.com</p>
     </div>
     <div class="footer-links">
       <a href="privacy.html">개인정보처리방침</a>
       <a href="terms.html">이용약관</a>
-      <a href="index.html">홈으로</a>
+      <a href="#top">맨 위로</a>
     </div>
   </div>
-  <p class="copyright">© 2026 Olla M&amp;P Solution. All rights reserved.</p>
+  <p class="copyright">&copy; <span data-year>2026</span> Olla M&amp;P Solution. All rights reserved.</p>
 </footer>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const nav = document.getElementById('nav');
-  navToggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(open));
-  });
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
