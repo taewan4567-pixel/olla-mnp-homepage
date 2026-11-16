@@ -165,7 +165,7 @@
         <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><div><b>Khẩn cấp</b>Khi gặp tình huống khẩn cấp ở Hàn Quốc, hãy gọi 119 (cấp cứu). Về bệnh truyền nhiễm và kiểm dịch, hãy gọi 1339.</div></li>
       </ul>
     </div>
-    <form class="contact-form" id="contactForm" novalidate data-msg-invalid="Vui lòng điền đủ các mục bắt buộc và đồng ý thu thập thông tin cá nhân." data-msg-sent="Ứng dụng email sẽ mở ra. Nếu không mở, vui lòng gửi trực tiếp đến ollamnpsolution@gmail.com.">
+    <form class="contact-form" id="contactForm" novalidate data-kind="contact" data-msg-ok="Đã nhận. Chúng tôi sẽ trả lời trong vòng 1 ngày làm việc." data-msg-fail="Gửi không thành công. Vui lòng gửi email đến ollamnpsolution@gmail.com." data-msg-sending="Đang gửi…" data-msg-invalid="Vui lòng điền đủ các mục bắt buộc và đồng ý thu thập thông tin cá nhân." data-msg-sent="Ứng dụng email sẽ mở ra. Nếu không mở, vui lòng gửi trực tiếp đến ollamnpsolution@gmail.com.">
       <div class="form-row">
         <label>Họ tên<input type="text" name="name" required autocomplete="name" placeholder="Nguyễn Văn A"></label>
         <label>Quốc gia<input type="text" name="country" autocomplete="country-name" placeholder="Ví dụ: Vietnam"></label>
@@ -182,9 +182,39 @@
         <summary>Thu thập và sử dụng thông tin cá nhân (vui lòng đọc)</summary>
         <ul><li>Thông tin thu thập: (bắt buộc) họ tên, email, loại câu hỏi, nội dung / (không bắt buộc) quốc gia, số điện thoại</li><li>Mục đích: trả lời câu hỏi và tư vấn</li><li>Thời gian lưu: 1 năm sau khi trả lời, sau đó xóa ngay</li><li>Bạn có thể từ chối, nhưng khi đó chúng tôi không thể tiếp nhận câu hỏi. Xem chi tiết tại <a href="../privacy.html" target="_blank">chính sách quyền riêng tư (tiếng Hàn)</a>.</li></ul>
       </details>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       <label class="consent"><input type="checkbox" name="consent" required><span>Tôi đồng ý cho thu thập và sử dụng thông tin cá nhân như trên.</span></label>
       <button type="submit" class="btn btn-block">Gửi câu hỏi</button>
       <p class="form-note" id="formNote" role="status"></p>
+    </form>
+  </div></section>
+
+  <section class="sec alt" id="partner"><div class="container">
+    <h2>Đăng ký đối tác</h2>
+    <p class="sec-desc">Các cơ sở y tế và doanh nghiệp phiên dịch, lưu trú, vận chuyển muốn cùng chúng tôi hỗ trợ bệnh nhân nước ngoài có thể đăng ký tại đây. Chúng tôi sẽ liên hệ sau khi xem xét.</p>
+    <form class="contact-form" id="partnerForm" novalidate data-kind="partner" data-msg-invalid="Vui lòng điền đủ các mục bắt buộc và đồng ý thu thập thông tin cá nhân." data-msg-ok="Đã nhận. Chúng tôi sẽ trả lời trong vòng 1 ngày làm việc." data-msg-fail="Gửi không thành công. Vui lòng gửi email đến ollamnpsolution@gmail.com." data-msg-sending="Đang gửi…">
+      <div class="form-row">
+        <label>Tên cơ sở / doanh nghiệp<input type="text" name="org" required maxlength="100" autocomplete="organization"></label>
+        <label>Lĩnh vực<select name="field" required><option>Bệnh viện / phòng khám</option><option>Phiên dịch y tế</option><option>Lưu trú</option><option>Vận chuyển / đón sân bay</option><option>Khác</option></select></label>
+      </div>
+      <div class="form-row">
+        <label>Người phụ trách<input type="text" name="person" required maxlength="50" autocomplete="name"></label>
+        <label>Ngôn ngữ hỗ trợ<input type="text" name="langs" maxlength="100" placeholder="VD: tiếng Anh, tiếng Trung, tiếng Việt"></label>
+      </div>
+      <div class="form-row">
+        <label>Email<input type="email" name="email" required maxlength="100" autocomplete="email" placeholder="you@example.com"></label>
+        <label>Điện thoại<input type="tel" name="phone" maxlength="40" autocomplete="tel" placeholder="+82 10-0000-0000"></label>
+      </div>
+      <label>Giới thiệu một dòng<input type="text" name="intro" maxlength="200" placeholder="VD: Phòng khám da liễu ở Gangnam, có điều phối viên cho bệnh nhân nước ngoài"></label>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <details class="consent-detail">
+        <summary>Cách chúng tôi sử dụng thông tin (vui lòng đọc)</summary>
+        <ul><li>Thông tin thu thập: (bắt buộc) tên cơ sở, lĩnh vực, người phụ trách, email / (tùy chọn) ngôn ngữ, điện thoại, giới thiệu</li><li>Mục đích: xem xét và liên hệ về hợp tác</li><li>Thời hạn: 1 năm sau khi xem xét, hoặc trong suốt thời gian hợp tác</li><li>Bạn có thể từ chối, nhưng khi đó chúng tôi không thể nhận đơn. <a href="../privacy.html" target="_blank">Privacy</a></li></ul>
+      </details>
+      <label class="consent"><input type="checkbox" name="consent" required><span>Tôi đồng ý cho thu thập và sử dụng thông tin trên.</span></label>
+      <button type="submit" class="btn btn-block">Gửi đăng ký</button>
+      <p class="form-note" role="status"></p>
+      <p class="link-note">Cơ sở y tế chỉ được giới thiệu đúng sự thật sau khi ký thỏa thuận hợp tác. Phần này tách biệt với hướng dẫn du lịch.</p>
     </form>
   </div></section>
 </main>
