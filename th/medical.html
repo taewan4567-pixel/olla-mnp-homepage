@@ -167,7 +167,7 @@
         <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><div><b>เหตุฉุกเฉิน</b>หากเกิดเหตุฉุกเฉินระหว่างอยู่ในเกาหลี โทร 119 (รถพยาบาล) เรื่องโรคติดต่อและการกักกันโรค โทร 1339</div></li>
       </ul>
     </div>
-    <form class="contact-form" id="contactForm" novalidate data-msg-invalid="โปรดกรอกข้อมูลที่จำเป็นให้ครบ และยินยอมให้เก็บข้อมูลส่วนบุคคล" data-msg-sent="แอปอีเมลจะเปิดขึ้น หากไม่เปิด โปรดส่งอีเมลมาที่ ollamnpsolution@gmail.com">
+    <form class="contact-form" id="contactForm" novalidate data-kind="contact" data-msg-ok="ได้รับแล้ว เราจะตอบกลับภายใน 1 วันทำการ" data-msg-fail="ส่งไม่สำเร็จ กรุณาส่งอีเมลไปที่ ollamnpsolution@gmail.com" data-msg-sending="กำลังส่ง…" data-msg-invalid="โปรดกรอกข้อมูลที่จำเป็นให้ครบ และยินยอมให้เก็บข้อมูลส่วนบุคคล" data-msg-sent="แอปอีเมลจะเปิดขึ้น หากไม่เปิด โปรดส่งอีเมลมาที่ ollamnpsolution@gmail.com">
       <div class="form-row">
         <label>ชื่อ<input type="text" name="name" required autocomplete="name" placeholder="ชื่อ-นามสกุล"></label>
         <label>ประเทศ<input type="text" name="country" autocomplete="country-name" placeholder="เช่น Thailand"></label>
@@ -184,9 +184,39 @@
         <summary>การเก็บและใช้ข้อมูลส่วนบุคคล (โปรดอ่าน)</summary>
         <ul><li>ข้อมูลที่เก็บ: (จำเป็น) ชื่อ อีเมล ประเภทคำถาม ข้อความ / (ไม่บังคับ) ประเทศ เบอร์โทร</li><li>วัตถุประสงค์: เพื่อตอบคำถามและให้คำปรึกษา</li><li>ระยะเวลาเก็บ: 1 ปีหลังตอบกลับ จากนั้นลบทันที</li><li>คุณปฏิเสธได้ แต่เราจะรับคำถามของคุณไม่ได้ ดูรายละเอียดใน<a href="../privacy.html" target="_blank">นโยบายความเป็นส่วนตัว (ภาษาเกาหลี)</a></li></ul>
       </details>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       <label class="consent"><input type="checkbox" name="consent" required><span>ฉันยินยอมให้เก็บและใช้ข้อมูลส่วนบุคคลตามข้างต้น</span></label>
       <button type="submit" class="btn btn-block">ส่งคำถาม</button>
       <p class="form-note" id="formNote" role="status"></p>
+    </form>
+  </div></section>
+
+  <section class="sec alt" id="partner"><div class="container">
+    <h2>สมัครเป็นพันธมิตร</h2>
+    <p class="sec-desc">สถานพยาบาลและบริษัทล่าม ที่พัก หรือการเดินทางที่ต้องการช่วยดูแลผู้ป่วยต่างชาติร่วมกับเรา สามารถสมัครได้ที่นี่ เจ้าหน้าที่จะติดต่อกลับหลังตรวจสอบ</p>
+    <form class="contact-form" id="partnerForm" novalidate data-kind="partner" data-msg-invalid="โปรดกรอกข้อมูลที่จำเป็นให้ครบ และยินยอมให้เก็บข้อมูลส่วนบุคคล" data-msg-ok="ได้รับแล้ว เราจะตอบกลับภายใน 1 วันทำการ" data-msg-fail="ส่งไม่สำเร็จ กรุณาส่งอีเมลไปที่ ollamnpsolution@gmail.com" data-msg-sending="กำลังส่ง…">
+      <div class="form-row">
+        <label>ชื่อองค์กร / บริษัท<input type="text" name="org" required maxlength="100" autocomplete="organization"></label>
+        <label>สาขา<select name="field" required><option>โรงพยาบาล / คลินิก</option><option>ล่ามทางการแพทย์</option><option>ที่พัก</option><option>การเดินทาง / รับส่งสนามบิน</option><option>อื่น ๆ</option></select></label>
+      </div>
+      <div class="form-row">
+        <label>ผู้ติดต่อ<input type="text" name="person" required maxlength="50" autocomplete="name"></label>
+        <label>ภาษาที่รองรับ<input type="text" name="langs" maxlength="100" placeholder="เช่น อังกฤษ จีน เวียดนาม"></label>
+      </div>
+      <div class="form-row">
+        <label>อีเมล<input type="email" name="email" required maxlength="100" autocomplete="email" placeholder="you@example.com"></label>
+        <label>โทรศัพท์<input type="tel" name="phone" maxlength="40" autocomplete="tel" placeholder="+82 10-0000-0000"></label>
+      </div>
+      <label>แนะนำสั้น ๆ หนึ่งบรรทัด<input type="text" name="intro" maxlength="200" placeholder="เช่น คลินิกผิวหนังย่านกังนัม มีผู้ประสานงานผู้ป่วยต่างชาติ"></label>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <details class="consent-detail">
+        <summary>การเก็บและใช้ข้อมูลส่วนบุคคล (โปรดอ่าน)</summary>
+        <ul><li>ข้อมูลที่เก็บ: (จำเป็น) ชื่อองค์กร สาขา ผู้ติดต่อ อีเมล / (ไม่บังคับ) ภาษา โทรศัพท์ คำแนะนำ</li><li>วัตถุประสงค์: เพื่อพิจารณาและติดต่อเรื่องความร่วมมือ</li><li>ระยะเวลา: 1 ปีหลังพิจารณา หรือตลอดช่วงความร่วมมือ</li><li>ท่านปฏิเสธได้ แต่จะไม่สามารถรับใบสมัครได้ <a href="../privacy.html" target="_blank">Privacy</a></li></ul>
+      </details>
+      <label class="consent"><input type="checkbox" name="consent" required><span>ข้าพเจ้ายินยอมให้เก็บและใช้ข้อมูลส่วนบุคคลข้างต้น</span></label>
+      <button type="submit" class="btn btn-block">ส่งใบสมัคร</button>
+      <p class="form-note" role="status"></p>
+      <p class="link-note">สถานพยาบาลจะได้รับการแนะนำตามข้อเท็จจริงหลังทำข้อตกลงความร่วมมือแล้วเท่านั้น และแยกจากคู่มือท่องเที่ยว</p>
     </form>
   </div></section>
 </main>
