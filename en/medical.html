@@ -165,7 +165,7 @@
         <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><div><b>Emergencies</b>In an emergency in Korea, call 119 (ambulance). For infectious disease and quarantine, call 1339.</div></li>
       </ul>
     </div>
-    <form class="contact-form" id="contactForm" novalidate data-msg-invalid="Please fill in all required fields and agree to the privacy notice." data-msg-sent="Your email app will open. If it does not, please write to ollamnpsolution@gmail.com.">
+    <form class="contact-form" id="contactForm" novalidate data-kind="contact" data-msg-ok="Received. We will reply within 1 business day." data-msg-fail="Sending failed. Please write to ollamnpsolution@gmail.com." data-msg-sending="Sending…" data-msg-invalid="Please fill in all required fields and agree to the privacy notice." data-msg-sent="Your email app will open. If it does not, please write to ollamnpsolution@gmail.com.">
       <div class="form-row">
         <label>Name<input type="text" name="name" required autocomplete="name" placeholder="John Doe"></label>
         <label>Country<input type="text" name="country" autocomplete="country-name" placeholder="e.g. Vietnam"></label>
@@ -182,9 +182,39 @@
         <summary>How we use your personal information (please read)</summary>
         <ul><li>What we collect: (required) name, email, type of inquiry, message / (optional) country, phone</li><li>Why: to answer your inquiry and provide consultation</li><li>How long: 1 year after we reply, then deleted without delay</li><li>You may refuse, but then we cannot accept your inquiry. See our <a href="../privacy.html" target="_blank">privacy policy (Korean)</a> for details.</li></ul>
       </details>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       <label class="consent"><input type="checkbox" name="consent" required><span>I agree to the collection and use of my personal information.</span></label>
       <button type="submit" class="btn btn-block">Send inquiry</button>
       <p class="form-note" id="formNote" role="status"></p>
+    </form>
+  </div></section>
+
+  <section class="sec alt" id="partner"><div class="container">
+    <h2>Partner registration</h2>
+    <p class="sec-desc">Medical institutions and interpretation, accommodation or transport companies that want to help international patients with us can apply here. We will contact you after review.</p>
+    <form class="contact-form" id="partnerForm" novalidate data-kind="partner" data-msg-invalid="Please fill in all required fields and agree to the privacy notice." data-msg-ok="Received. We will reply within 1 business day." data-msg-fail="Sending failed. Please write to ollamnpsolution@gmail.com." data-msg-sending="Sending…">
+      <div class="form-row">
+        <label>Organization / company name<input type="text" name="org" required maxlength="100" autocomplete="organization"></label>
+        <label>Field<select name="field" required><option>Hospital / clinic</option><option>Medical interpretation</option><option>Accommodation</option><option>Transport / airport pickup</option><option>Other</option></select></label>
+      </div>
+      <div class="form-row">
+        <label>Contact person<input type="text" name="person" required maxlength="50" autocomplete="name"></label>
+        <label>Languages supported<input type="text" name="langs" maxlength="100" placeholder="e.g. English, Chinese, Vietnamese"></label>
+      </div>
+      <div class="form-row">
+        <label>Email<input type="email" name="email" required maxlength="100" autocomplete="email" placeholder="you@example.com"></label>
+        <label>Phone<input type="tel" name="phone" maxlength="40" autocomplete="tel" placeholder="+82 10-0000-0000"></label>
+      </div>
+      <label>One-line introduction<input type="text" name="intro" maxlength="200" placeholder="e.g. Dermatology clinic in Gangnam with an international patient coordinator"></label>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <details class="consent-detail">
+        <summary>How we use your information (please read)</summary>
+        <ul><li>What we collect: (required) organization name, field, contact person, email / (optional) languages, phone, introduction</li><li>Why: to review and contact you about partnership</li><li>How long: 1 year after review, or for the period of partnership</li><li>You may refuse, but then we cannot accept your application. <a href="../privacy.html" target="_blank">Privacy</a></li></ul>
+      </details>
+      <label class="consent"><input type="checkbox" name="consent" required><span>I agree to the collection and use of this information.</span></label>
+      <button type="submit" class="btn btn-block">Send application</button>
+      <p class="form-note" role="status"></p>
+      <p class="link-note">Medical institutions are introduced factually only after a partnership agreement. This is separate from our sightseeing guide.</p>
     </form>
   </div></section>
 </main>
