@@ -120,29 +120,51 @@ function renderRegions() {
 renderRegions();
 loadGuideImages();
 
-// 문의 폼: 백엔드 연결 전까지는 메일 앱으로 전달
-// TODO: Formspree / Google Apps Script / 자체 API 중 하나로 교체
-const form = document.getElementById('contactForm');
-const note = document.getElementById('formNote');
-if (form) form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (!form.checkValidity()) {
-    note.textContent = form.dataset.msgInvalid || '필수 항목을 모두 입력하고 개인정보 수집에 동의해 주세요.';
-    form.reportValidity();
-    return;
-  }
-  const d = new FormData(form);
-  const subject = `[홈페이지 문의 ${LANG.toUpperCase()}] ${d.get('type')} - ${d.get('name')}`;
-  const body = [
-    `이름: ${d.get('name')}`,
-    `국가: ${d.get('country')}`,
-    `이메일: ${d.get('email')}`,
-    `연락처: ${d.get('phone')}`,
-    `문의 유형: ${d.get('type')}`,
-    `언어: ${LANG}`,
-    '',
-    d.get('message'),
-  ].join('\n');
-  window.location.href = `mailto:ollamnpsolution@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  note.textContent = form.dataset.msgSent || '메일 앱이 열립니다. 열리지 않으면 ollamnpsolution@gmail.com 으로 직접 보내 주세요.';
-});
+// 문의 폼·협력 업체 등록 폼 (2026-11-16)
+// FORM_ENDPOINT에 Apps Script 웹 앱 주소(…/exec)를 넣으면 바로 접수(시트 + 메일 알림).
+// 비어 있으면 예전처럼 메일 앱(mailto)으로 보낸다.
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyZvO0Yf02Lphm2ACTj4S3ffEk8sv9H2GWYPWQ7bsaKE2g7BijWDOYnG0TSGqYBvQYk/exec';
+const FORM_MAIL = 'ollamnpsolution@gmail.com';
+const FIELD_KO = { name: '이름', country: '국가', email: '이메일', phone: '연락처', type: '문의 유형', message: '문의 내용',
+  org: '기관·업체명', field: '분야', person: '담당자', langs: '가능한 언어', intro: '소개' };
+function setupForm(f) {
+  if (!f) return;
+  const kind = f.dataset.kind || 'contact';
+  const note = f.querySelector('.form-note');
+  const btn = f.querySelector('button[type=submit]');
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!f.checkValidity()) {
+      note.textContent = f.dataset.msgInvalid || '필수 항목을 모두 입력하고 개인정보 수집에 동의해 주세요.';
+      f.reportValidity();
+      return;
+    }
+    const d = new FormData(f);
+    if (d.get('website')) return; // 함정 칸에 글이 있으면 자동 프로그램으로 보고 조용히 무시
+    const data = { kind, lang: LANG, page: location.pathname };
+    d.forEach((v, k) => { if (k !== 'website' && k !== 'consent') data[k] = String(v).trim(); });
+    data.consent = d.get('consent') ? 'Y' : 'N';
+    if (!FORM_ENDPOINT) {
+      const title = kind === 'partner' ? `[협력 업체 등록 ${LANG.toUpperCase()}] ${data.field} - ${data.org}`
+        : `[홈페이지 문의 ${LANG.toUpperCase()}] ${data.type} - ${data.name}`;
+      const body = Object.keys(data).filter((k) => FIELD_KO[k]).map((k) => `${FIELD_KO[k]}: ${data[k]}`).join('\n') + `\n언어: ${LANG}`;
+      window.location.href = `mailto:${FORM_MAIL}?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+      note.textContent = f.dataset.msgSent || `메일 앱이 열립니다. 열리지 않으면 ${FORM_MAIL} 으로 직접 보내 주세요.`;
+      return;
+    }
+    btn.disabled = true;
+    note.textContent = f.dataset.msgSending || '보내는 중입니다…';
+    try {
+      // text/plain으로 보내면 Apps Script가 사전 요청 없이 받는다(no-cors라 응답 내용은 못 읽음)
+      await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', credentials: 'omit', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+      note.textContent = f.dataset.msgOk || '접수되었습니다. 1영업일 안에 답변드립니다.';
+      f.reset();
+    } catch (err) {
+      note.textContent = f.dataset.msgFail || `전송에 실패했습니다. ${FORM_MAIL} 으로 직접 보내 주세요.`;
+    } finally {
+      btn.disabled = false;
+    }
+  });
+}
+setupForm(document.getElementById('contactForm'));
+setupForm(document.getElementById('partnerForm'));
