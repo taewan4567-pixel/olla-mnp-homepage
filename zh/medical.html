@@ -165,7 +165,7 @@
         <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><div><b>紧急情况</b>在韩国停留期间如遇紧急情况，请拨打119（急救）；传染病、检疫相关请拨打1339。</div></li>
       </ul>
     </div>
-    <form class="contact-form" id="contactForm" novalidate data-msg-invalid="请填写所有必填项，并同意个人信息收集。" data-msg-sent="将打开邮件程序。如未打开，请直接发送至 ollamnpsolution@gmail.com。">
+    <form class="contact-form" id="contactForm" novalidate data-kind="contact" data-msg-ok="已收到。我们将在1个工作日内回复。" data-msg-fail="发送失败。请直接发邮件至 ollamnpsolution@gmail.com。" data-msg-sending="正在发送…" data-msg-invalid="请填写所有必填项，并同意个人信息收集。" data-msg-sent="将打开邮件程序。如未打开，请直接发送至 ollamnpsolution@gmail.com。">
       <div class="form-row">
         <label>姓名<input type="text" name="name" required autocomplete="name" placeholder="张三 / John Doe"></label>
         <label>国家<input type="text" name="country" autocomplete="country-name" placeholder="例：China"></label>
@@ -182,9 +182,39 @@
         <summary>个人信息收集与使用说明（必读）</summary>
         <ul><li>收集项目：（必填）姓名、邮箱、咨询类型、咨询内容 /（选填）国家、电话</li><li>收集目的：回复咨询并提供咨询服务</li><li>保存期限：回复完成后1年，之后立即销毁</li><li>您可以拒绝同意，但拒绝后将无法提交咨询。详情请查看<a href="../privacy.html" target="_blank">隐私政策（韩文）</a>。</li></ul>
       </details>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       <label class="consent"><input type="checkbox" name="consent" required><span>我同意上述个人信息的收集与使用。</span></label>
       <button type="submit" class="btn btn-block">发送咨询</button>
       <p class="form-note" id="formNote" role="status"></p>
+    </form>
+  </div></section>
+
+  <section class="sec alt" id="partner"><div class="container">
+    <h2>合作机构登记申请</h2>
+    <p class="sec-desc">欢迎希望与我们一起为外国患者提供服务的医疗机构及翻译、住宿、交通企业提交登记申请。审核后负责人将与您联系。</p>
+    <form class="contact-form" id="partnerForm" novalidate data-kind="partner" data-msg-invalid="请填写所有必填项，并同意个人信息收集。" data-msg-ok="已收到。我们将在1个工作日内回复。" data-msg-fail="发送失败。请直接发邮件至 ollamnpsolution@gmail.com。" data-msg-sending="正在发送…">
+      <div class="form-row">
+        <label>机构/企业名称<input type="text" name="org" required maxlength="100" autocomplete="organization"></label>
+        <label>领域<select name="field" required><option>医院/诊所</option><option>医疗翻译</option><option>住宿</option><option>交通/机场接送</option><option>其他</option></select></label>
+      </div>
+      <div class="form-row">
+        <label>负责人<input type="text" name="person" required maxlength="50" autocomplete="name"></label>
+        <label>可提供的语言<input type="text" name="langs" maxlength="100" placeholder="例：英语、中文、越南语"></label>
+      </div>
+      <div class="form-row">
+        <label>电子邮件<input type="email" name="email" required maxlength="100" autocomplete="email" placeholder="you@example.com"></label>
+        <label>电话<input type="tel" name="phone" maxlength="40" autocomplete="tel" placeholder="+82 10-0000-0000"></label>
+      </div>
+      <label>一句话介绍<input type="text" name="intro" maxlength="200" placeholder="例：江南皮肤科，配有外国患者专职协调员"></label>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <details class="consent-detail">
+        <summary>个人信息收集与使用说明（必读）</summary>
+        <ul><li>收集项目：（必填）机构/企业名称、领域、负责人、电子邮件 /（选填）语言、电话、介绍</li><li>收集目的：审核合作登记并与您联系</li><li>保存期限：审核完成后1年，合作期间则保存至合作结束</li><li>您可以拒绝，但拒绝后将无法受理申请。 <a href="../privacy.html" target="_blank">Privacy</a></li></ul>
+      </details>
+      <label class="consent"><input type="checkbox" name="consent" required><span>我同意上述个人信息的收集与使用。</span></label>
+      <button type="submit" class="btn btn-block">提交登记申请</button>
+      <p class="form-note" role="status"></p>
+      <p class="link-note">医疗机构仅在签订合作协议后如实介绍。本服务与旅游景点指南分开运营。</p>
     </form>
   </div></section>
 </main>
