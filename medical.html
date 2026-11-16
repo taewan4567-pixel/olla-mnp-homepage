@@ -165,7 +165,7 @@
         <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><div><b>응급 상황</b>한국에 머무는 동안 응급 상황은 119(구급), 감염병·검역은 1339로 연락하세요.</div></li>
       </ul>
     </div>
-    <form class="contact-form" id="contactForm" novalidate data-msg-invalid="필수 항목을 모두 입력하고 개인정보 수집에 동의해 주세요." data-msg-sent="메일 앱이 열립니다. 열리지 않으면 ollamnpsolution@gmail.com 으로 직접 보내 주세요.">
+    <form class="contact-form" id="contactForm" novalidate data-kind="contact" data-msg-ok="접수되었습니다. 1영업일 안에 답변드립니다." data-msg-fail="전송에 실패했습니다. ollamnpsolution@gmail.com 으로 직접 보내 주세요." data-msg-sending="보내는 중입니다…" data-msg-invalid="필수 항목을 모두 입력하고 개인정보 수집에 동의해 주세요." data-msg-sent="메일 앱이 열립니다. 열리지 않으면 ollamnpsolution@gmail.com 으로 직접 보내 주세요.">
       <div class="form-row">
         <label>이름<input type="text" name="name" required autocomplete="name" placeholder="홍길동 / John Doe"></label>
         <label>국가<input type="text" name="country" autocomplete="country-name" placeholder="예: Vietnam"></label>
@@ -182,9 +182,39 @@
         <summary>개인정보 수집·이용 안내 (필수 확인)</summary>
         <ul><li>수집 항목: (필수) 이름, 이메일, 문의 유형, 문의 내용 / (선택) 국가, 연락처</li><li>수집 목적: 문의 응대와 상담 서비스 제공</li><li>보유 기간: 답변 완료 후 1년, 이후 지체 없이 파기</li><li>동의를 거부할 수 있으나, 거부하면 문의 접수가 제한됩니다. 자세한 내용은 <a href="privacy.html" target="_blank">개인정보처리방침</a>을 확인해 주세요.</li></ul>
       </details>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       <label class="consent"><input type="checkbox" name="consent" required><span>위 개인정보 수집·이용에 동의합니다.</span></label>
       <button type="submit" class="btn btn-block">문의 보내기</button>
       <p class="form-note" id="formNote" role="status"></p>
+    </form>
+  </div></section>
+
+  <section class="sec alt" id="partner"><div class="container">
+    <h2>협력 업체 등록 신청</h2>
+    <p class="sec-desc">외국인 환자를 함께 돕고 싶은 의료기관과 통역·숙소·교통 업체의 등록 신청을 받습니다. 확인 뒤 담당자가 연락드립니다.</p>
+    <form class="contact-form" id="partnerForm" novalidate data-kind="partner" data-msg-invalid="필수 항목을 모두 입력하고 개인정보 수집에 동의해 주세요." data-msg-ok="접수되었습니다. 1영업일 안에 답변드립니다." data-msg-fail="전송에 실패했습니다. ollamnpsolution@gmail.com 으로 직접 보내 주세요." data-msg-sending="보내는 중입니다…">
+      <div class="form-row">
+        <label>기관·업체명<input type="text" name="org" required maxlength="100" autocomplete="organization"></label>
+        <label>분야<select name="field" required><option>병원·의원</option><option>의료 통역</option><option>숙소</option><option>교통·공항 픽업</option><option>기타</option></select></label>
+      </div>
+      <div class="form-row">
+        <label>담당자<input type="text" name="person" required maxlength="50" autocomplete="name"></label>
+        <label>가능한 언어<input type="text" name="langs" maxlength="100" placeholder="예: 영어, 중국어, 베트남어"></label>
+      </div>
+      <div class="form-row">
+        <label>이메일<input type="email" name="email" required maxlength="100" autocomplete="email" placeholder="you@example.com"></label>
+        <label>전화<input type="tel" name="phone" maxlength="40" autocomplete="tel" placeholder="+82 10-0000-0000"></label>
+      </div>
+      <label>소개 한 줄<input type="text" name="intro" maxlength="200" placeholder="예: 강남 피부과, 외국인 환자 전담 코디네이터 상주"></label>
+      <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <details class="consent-detail">
+        <summary>개인정보 수집·이용 안내 (필수 확인)</summary>
+        <ul><li>수집 항목: (필수) 기관·업체명, 분야, 담당자, 이메일 / (선택) 가능한 언어, 전화, 소개</li><li>수집 목적: 협력 등록 검토와 연락</li><li>보유 기간: 검토 완료 후 1년, 협력 시에는 협력 기간 동안</li><li>동의를 거부할 수 있으나, 거부하면 신청 접수가 제한됩니다. <a href="privacy.html" target="_blank">개인정보처리방침</a></li></ul>
+      </details>
+      <label class="consent"><input type="checkbox" name="consent" required><span>위 개인정보 수집·이용에 동의합니다.</span></label>
+      <button type="submit" class="btn btn-block">등록 신청 보내기</button>
+      <p class="form-note" role="status"></p>
+      <p class="link-note">의료기관 안내는 협력 계약을 맺은 기관에 한해 사실 그대로 소개합니다. 관광지 안내와는 따로 운영합니다.</p>
     </form>
   </div></section>
 </main>
